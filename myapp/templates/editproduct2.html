@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+{% extends 'basics.html' %}
+
+{% load static %}
+
+{% block title %} Edit Product{% endblock %}
+
+{% block js %} {% endblock %}
+{% block body %}
+
+		<div id="colorlib-contact">
+			<div class="container">
+				<div class="row">
+<!--					<div class="col-sm-12">-->
+<!--						<h3>Contact Information</h3>-->
+<!--						<div class="row contact-info-wrap">-->
+<!--							<div class="col-md-3">-->
+<!--								<p><span><i class="icon-location"></i></span> 198 West 21th Street, <br> Suite 721 New York NY 10016</p>-->
+<!--							</div>-->
+<!--							<div class="col-md-3">-->
+<!--								<p><span><i class="icon-phone3"></i></span> <a href="tel://1234567920">+ 1235 2355 98</a></p>-->
+<!--							</div>-->
+<!--							<div class="col-md-3">-->
+<!--								<p><span><i class="icon-paperplane"></i></span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>-->
+<!--							</div>-->
+<!--							<div class="col-md-3">-->
+<!--								<p><span><i class="icon-globe"></i></span> <a href="#">yoursite.com</a></p>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="contact-wrap">
+							<h3>Edit Product</h3>
+							<form action="/updateproduct/{{productdata.id}}" method="post" class="contact-form" enctype="multipart/form-data">{% csrf_token %}
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label for="productname">Product Name</label>
+											<input type="text" name="prodname" value="{{productdata.Product_Name}}" id="productname" class="form-control" placeholder="Enter Product Name..">
+										</div>
+									</div>
+<!--									<div class="col-md-6">-->
+<!--										<div class="form-group">-->
+<!--											<label for="fname">First Name</label>-->
+<!--											<input type="text" id="fname" class="form-control" placeholder="Your firstname">-->
+<!--										</div>-->
+<!--									</div>-->
+<!--									<div class="col-md-6">-->
+<!--										<div class="form-group">-->
+<!--											<label for="lname">Last Name</label>-->
+<!--											<input type="text" id="lname" class="form-control" placeholder="Your lastname">-->
+<!--										</div>-->
+<!--									</div>-->
+									<div class="w-100"></div>
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label for="productPrice">Product Price:</label>
+                							<input type="number" name="prodprice" value="{{productdata.Product_Price}}" class="form-control" id="productPrice" placeholder="Enter Product Price.." required>
+										</div>
+									</div>
+<!--									<div class="w-100"></div>-->
+<!--									<div class="col-sm-12">-->
+<!--										<div class="form-group">-->
+<!--											<label for="phone">Phone Number:</label>-->
+<!--											<input type="tel" name="uphone" class="form-control" id="phone"  placeholder="Enter your Phone.." required>-->
+<!--										</div>-->
+<!--									</div>-->
+<!--									<div class="w-100"></div>-->
+<!--									<div class="col-sm-12">-->
+<!--										<div class="form-group">-->
+<!--											<label for="password">Password:</label>-->
+<!--											<input type="password" name="upassword" class="form-control"  placeholder="Enter you password.." id="password" required>-->
+<!--										</div>-->
+<!--									</div>-->
+									<div class="w-100"></div>
+
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label for="productstock">Product Stock:</label>
+                							<input type="number" name="prodstock" value="{{productdata.Stock}}" class="form-control" id="productstock" required>
+										</div>
+									</div>
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label for="description">Product Description:</label>
+											<textarea name="proddesc" id="description" cols="30" rows="10" class="form-control">{{productdata.Product_Description}}</textarea>
+										</div>
+									</div>
+									<div class="w-100"></div>
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label for="productImage">Product Image:</label>
+											<input type="file" name="prodimage" class="form-control-file" id="productImage" accept="image/*" >
+<img class="product-img img-fluid" src="/media/{{productdata.Image}}" height="100px" width="100px">
+										</div>
+									</div>
+									<div class="w-100"></div>
+									<div class="col-sm-12">
+										<div class="form-group">
+											<input type="submit" value="Submit" class="btn btn-primary">
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+<!--					<div class="col-md-6">-->
+<!--						<div id="map" class="colorlib-map"></div>-->
+<!--					</div>-->
+				</div>
+			</div>
+		</div>
+
+{% endblock %}
+</body>
+</html>
+

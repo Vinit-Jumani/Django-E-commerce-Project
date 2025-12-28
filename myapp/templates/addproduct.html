@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+{% extends 'basics.html' %}
+
+{% load static %}
+
+{% block title %} Add Product {% endblock %}
+
+{% block js %} {% endblock %}
+{% block body %}
+
+<link rel="stylesheet" href="{% static 'css/style3.css' %}" >
+
+<section class="register-form page-section-ptb">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+         <div class="section-title">
+<!--           <span>Welcome to </span>-->
+           <h3>Add Product Data</h3>
+           <div class="separator"></div>
+         </div>
+      </div>
+    </div>
+      <form action="insertproduct" method="post" enctype="multipart/form-data">{% csrf_token %}
+    <div class="row justify-content-center">
+       <div class="col-lg-8 col-md-12">
+          <div class="gray-form">
+
+           <div class="row">
+           <div class="mb-3 col-md-6">
+             <label class="form-label">Product Name *</label>
+                <input class="form-controll" type="text" placeholder="Enter Product Name.." name="prodname">
+            </div>
+            <div class="mb-3 col-md-6">
+             <label class="form-label">Product Price *</label>
+              <input class="form-controll" type="number" placeholder="Enter Product Price.." name="prodprice">
+             </div>
+            </div>
+           <div class="mb-3">
+             <label class="form-label">Product Category *</label>
+               <select name="prodcategory" id="Category" class="form-controll" required>
+                   <option value="">Select Category</option>
+                   <option value="2">Men</option>
+                   <option value="3">Women</option>
+               </select>
+            </div>
+            <div class="mb-3">
+             <label class="form-label">Product Stock *</label>
+               <input  class="form-controll" type="text" placeholder="Product Stock" name="prodstock">
+            </div>
+            <div class="mb-3">
+             <label class="form-label">Product Description *</label>
+               <textarea name="proddesc" id="description" cols="30" rows="10" class="form-controll"></textarea>
+            </div>
+            <div class="row">
+                <div class="mb-3 col-md-6">
+                <div class="form-group">
+                    <label for="productImage">Product Image:</label>
+                    <input type="file" name="prodimage" class="form-control-file" id="productImage" accept="image/*" required>
+    <!--                <input type="file" name="prodimage1" class="form-control-file " accept="image/*" required>-->
+    <!--                <input type="file" name="prodimage2" class="form-control-file " accept="image/*" required>-->
+    <!--                <input type="file" name="prodimage3" class="form-control-file "  accept="image/*" required>-->
+                </div>
+                </div>
+                <div class="mb-3 col-md-6">
+                  <div class="form-group">
+                    <label for="productImage">Product Image 2:</label>
+    <!--                <input type="file" name="prodimage" class="form-control-file " id="productImage" accept="image/*" required>-->
+                    <input type="file" name="prodimage1" class="form-control-file " accept="image/*">
+    <!--                <input type="file" name="prodimage2" class="form-control-file " accept="image/*" required>-->
+    <!--                <input type="file" name="prodimage3" class="form-control-file "  accept="image/*" required>-->
+                  </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-3 col-md-6">
+                <div class="form-group">
+                    <label for="productImage">Product Image 3:</label>
+<!--                    <input type="file" name="prodimage" class="form-control-file" id="productImage" accept="image/*" required>-->
+    <!--                <input type="file" name="prodimage1" class="form-control-file " accept="image/*" required>-->
+                    <input type="file" name="prodimage2" class="form-control-file" accept="image/*" >
+    <!--                <input type="file" name="prodimage3" class="form-control-file "  accept="image/*" required>-->
+                </div>
+                </div>
+                <div class="mb-3 col-md-6">
+                  <div class="form-group">
+                    <label for="productImage">Product Image 4:</label>
+    <!--                <input type="file" name="prodimage" class="form-control-file " id="productImage" accept="image/*" required>-->
+<!--                    <input type="file" name="prodimage1" class="form-control-file " accept="image/*" required>-->
+    <!--                <input type="file" name="prodimage2" class="form-control-file " accept="image/*" required>-->
+                    <input type="file" name="prodimage3" class="form-control-file "  accept="image/*" >
+                  </div>
+                </div>
+            </div>
+
+<!--            <div class="mb-3">-->
+<!--             <label class="form-label">Accept Terms *</label>-->
+<!--               <input type="checkbox" name="accept_terms" id="accept_terms" required>-->
+<!--               <label for="accept_terms">I accept the terms and conditions</label>-->
+<!--            </div>-->
+
+            <button type="submit" value="submit" class="button red">
+                Add Product
+            </button>
+<!--            <p class="link">Already have an account? please <a href="login"> login here </a></p>-->
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+</div>
+</section>
+
+{% endblock %}
+</body>
+</html>

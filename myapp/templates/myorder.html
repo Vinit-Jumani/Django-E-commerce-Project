@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+{% extends 'basics.html' %}
+
+{% load static %}
+{% block title %} Login page{% endblock%}
+
+{% block js %} {% endblock%}
+{% block body %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <!-- Bootstrap CSS -->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+    <style>
+        body {
+<!--            background-color: #f8f9fa;-->
+            margin-top: 50px;
+        }
+        table {
+            background-color: white;
+
+        }
+        .total{
+               float:right;
+        }
+        body {
+<!--      background-color: #f8f9fa;-->
+    }
+    .form-container {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Added styles for radio buttons */
+    .form-check-input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .form-check-label {
+      position: relative;
+      padding-left: 30px;
+      cursor: pointer;
+    }
+
+    .form-check-label:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      border: 2px solid #28a745; /* Green color */
+      border-radius: 50%;
+      background-color: #ffffff; /* White background */
+    }
+
+    .form-check-input[type="radio"]:checked + .form-check-label:before {
+      background-color: #28a745; /* Green color */
+    }
+
+    .form-check-input[type="radio"]:checked + .form-check-label:after {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #ffffff; /* White background */
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Your Orders</h2>
+        <div class="table-responsive">
+            <table class="table  text-center">
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Address</th>
+                        <th>Order Status</th>
+                        <th>Payment Status</th>
+                        <th>Date</th>
+                        <th>View</th>
+                        <th>Feedback</th>
+                    </tr>
+                </thead>
+                <tbody id="productTableBody">
+                    <!-- This section will be populated with form data -->
+                    {% for order in orderdetails %}
+                        <tr align="left">
+                            <td>{{order.Login_ID}}</td>
+                            <td>{{order.Address}}</td>
+                            <td>{{order.order_status}}</td>
+                            <td>{{order.Payment_status}}</td>
+                            <td>{{order.Date_time}}</td>
+                            <td><a href="/vieworder/{{order.id}}" class="btn bg-success text-white">View Details</a></td>
+                            <td><a href="/productfeedback/{{order.id}}" class="btn bg-success text-white">Send Feedback</a></td>
+                        </tr>
+                    {%endfor%}
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+{%endblock%}
+</body>
+</html>

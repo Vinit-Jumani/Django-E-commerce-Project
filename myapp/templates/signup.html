@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+{% extends 'basics.html' %}
+
+{% load static %}
+
+{% block title %} Signup {% endblock %}
+
+{% block js %} {% endblock %}
+{% block body %}
+
+<link rel="stylesheet" href="{% static 'css/style3.css' %}" >
+
+<section class="register-form page-section-ptb">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+         <div class="section-title">
+           <span>Welcome to </span>
+           <h3>E-commerce Platforms for Shoes</h3>
+           <div class="separator"></div>
+         </div>
+      </div>
+    </div>
+      <form action="insert" method="post" >{% csrf_token %}
+    <div class="row justify-content-center">
+       <div class="col-lg-8 col-md-12">
+          <div class="gray-form">
+
+           <div class="row">
+           <div class="mb-3 col-md-6">
+             <label class="form-label">First Name *</label>
+                <input class="form-controll" type="text" placeholder="First Name" name="fname">
+            </div>
+            <div class="mb-3 col-md-6">
+             <label class="form-label">Last Name *</label>
+              <input class="form-controll" type="text" placeholder="Last Name" name="lname">
+             </div>
+            </div>
+           <div class="mb-3">
+             <label class="form-label">User name *</label>
+               <input  class="form-controll" type="text" placeholder="Choose your user name" name="uname">
+            </div>
+            <div class="mb-3">
+             <label class="form-label">Email *</label>
+               <input  class="form-controll" type="text" placeholder="Enter your email" name="uemail">
+            </div>
+<!--            <div class="mb-3">-->
+<!--             <label class="form-label">Password *</label>-->
+<!--               <input class="form-controll" type="text" placeholder="Password" name="upassword">-->
+<!--            </div>-->
+            <div class="mb-3">
+             <label class="form-label">Password *</label>
+               <input class="form-controll" type="password" placeholder="Password" name="upassword">
+            </div>
+
+            <div class="mb-3">
+             <label class="form-label">Mobile phone *</label>
+               <input id="phone" class="form-controll" type="text" placeholder="Enter your mobile no" name="uphone">
+            </div>
+
+                <div class="mb-3">
+
+                </div>
+                <div class="mb-3">
+                 <label class="form-label">Role *</label>
+                   <div class="selected-box">
+                    <select name="urole" class="form-controll" required>
+                        <option value="">Select a Role</option>
+                        <option value="User">User</option>
+                        <option value="Vendor">Vendor</option>
+                    </select>
+                   </div>
+                </div>
+                 <div class="mb-3">
+                  <div class="remember-checkbox">
+                     <input type="checkbox" name="one" id="one" />
+                      <label for="one">Accept our <a href="#"> privacy policy</a> and <a href="#"> customer agreement</a></label>
+                     </div>
+                     </div>
+
+                    <button type="submit" value="login" class="button red">
+                                        Register an account
+                    </button>
+<!--                   <a href="/insert" class="button red" id="registerButton"> Register an account </a>-->
+                   <p class="link">Already have an account? please <a href="login"> login here </a></p>
+               </div>
+           </div>
+            </div>
+
+
+      </form>
+    </div>
+  </div>
+
+</section>
+
+
+
+
+{% endblock %}
+</body>
+</html>
+

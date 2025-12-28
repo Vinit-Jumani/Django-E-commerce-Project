@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+{% extends 'basics.html' %}
+
+{% load static %}
+
+{% block title %} Women {% endblock %}
+
+{% block js %} {% endblock %}
+{% block body %} 
+
+		<div class="breadcrumbs-two">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="breadcrumbs-img" style="background-image: url(static/images/cover-img-1.jpg);">
+							<h2>Women's</h2>
+						</div>
+<!--						<div class="menu text-center">-->
+<!--							<p><a href="#">New Arrivals</a> <a href="#">Best Sellers</a> <a href="#">Extended Widths</a> <a href="#">Sale</a></p>-->
+<!--						</div>-->
+					</div>
+				</div>
+			</div>
+		</div>
+<div class="colorlib-product">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-8 offset-sm-2 text-center colorlib-heading colorlib-heading-sm">
+						<h1>Shop Products</h1>
+					</div>
+				</div>
+				<div class="row row-pb-md">
+					{% for data in productdetail %}
+					<div class="col-md-3 col-lg-3 mb-4 text-center">
+						<div class="product-entry border">
+							<a href="product-detail/{{data.id}}" class="prod-img">
+								<img src="/media/{{data.Image}}" class="img-fluid" style="width: 250px; height: 250px;" alt="Free html5 bootstrap 4 template">
+							</a>
+							<div class="desc">
+								<h2><a href="product-detail/{{data.id}}">{{ data.Product_Name}}</a></h2>
+								<span class="price">₹ {{ data.Product_Price}}</span>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+
+		{% endblock %}
+
+	</body>
+</html>
+

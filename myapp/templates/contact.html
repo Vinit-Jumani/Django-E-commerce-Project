@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+{% extends 'basics.html' %}
+
+{% load static %}
+
+{% block title %} Contact Us {% endblock %}
+
+{% block js %} {% endblock %}
+{% block body %}
+
+<link rel="stylesheet" href="{% static 'css/style3.css' %}" >
+
+<section class="register-form page-section-ptb">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+         <div class="section-title">
+           <span>Welcome to </span>
+           <h2>E-commerce Platforms for Shoes</h2>
+           <div class="separator"></div>
+         </div>
+      </div>
+    </div>
+    <form action="insertcontact" method="post" >{% csrf_token %}
+      <div class="row justify-content-center">
+         <div class="col-lg-8 col-md-12">
+            <div class="gray-form">
+              <div class="row">
+                <div class="mb-3 col-md-6">
+                  <label class="form-label">First Name *</label>
+                  <input class="form-controll" type="text" placeholder="First Name" name="fname">
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label class="form-label">Last Name *</label>
+                  <input class="form-controll" type="text" placeholder="Last Name" name="lname">
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Email *</label>
+                <input  class="form-controll" type="text" placeholder="Enter your email" name="email">
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Phone No *</label>
+                <input  class="form-controll" type="text" placeholder="Enter your phone number" name="phone">
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Message *</label>
+                <textarea class="form-controll" cols="30" rows="5" placeholder="Enter your message" name="message"></textarea>
+              </div>
+
+              <button type="submit" value="login" class="button red">
+                Send Message
+              </button>
+
+            </div>
+         </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+{% endblock %}
+</body>
+</html>
