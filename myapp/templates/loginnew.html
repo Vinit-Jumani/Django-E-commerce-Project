@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+{% extends 'basics.html' %}
+
+{% load static %}
+{% block title %} Login page{% endblock%}
+
+{% block js %} {% endblock%}
+{% block body %}
+
+
+	<link rel="stylesheet" href="{% static 'css/style2.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style3.css' %}">
+
+		<div class="breadcrumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<p class="bread"><span><a href="index.html">Home</a></span> / <span>Contact</span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<section class="login_part padding_top">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <div class="login_part_text text-center">
+                        <div class="login_part_text_iner">
+                            <h2>New to our Website?</h2>
+                            <p>There are advances being made in science and technology
+                                everyday, and a good example of this is the</p>
+                            <a href="signup" class="btn_3">Create an Account</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="login_part_form">
+                        <div class="login_part_form_iner">
+                            <h3>Welcome Back ! <br>
+                                Please Sign in now</h3>
+
+                            <form class="row contact_form" action="checklogin" method="post" novalidate="novalidate">{% csrf_token %}
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="text" class="form-control" id="email" name="uemail" value=""
+                                        placeholder="Your email address">
+                                </div>
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="password" class="form-control" id="password" name="upassword" value=""
+                                        placeholder="Password">
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <div class="creat_account d-flex align-items-center">
+                                        <input type="checkbox" id="f-option" name="selector">
+                                        <label for="f-option">Remember me</label>
+                                    </div>
+                                    <button type="submit" value="login" class="btn_3">
+                                        log in
+                                    </button>
+                                    <a href="#" data-toggle="modal" data-target="#forgotPasswordModal">Forgot Password?</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="forgotPasswordModalLabel">Forgot Password</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/forgotpassword" method="post" class="forgot-password-form">
+                    {% csrf_token %}
+                    <div class="form-input">
+                        <label>Email</label>
+                        <input type="email" name="uemail" placeholder="Enter your email" required />
+                    </div>
+                    <button type="submit" class="btn_3">Reset Password</button>
+<!--                    <button type="submit" value="login" class="btn_3">-->
+<!--                                        Reset Password-->
+<!--                                    </button>-->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+	{%endblock%}
+	</body>
+</html>
+

@@ -1,0 +1,22 @@
+/*************************
+    Button
+*************************/
+.button { text-align: center; background: #88c8bc; color: #ffffff; display: inline-block; text-transform: capitalize; vertical-align: middle; padding: 8px 20px; -ms-transform: perspective(1px) translateZ(0); -o-transform: perspective(1px) translateZ(0); -moz-transform: perspective(1px) translateZ(0); -webkit-transform: perspective(1px) translateZ(0); transform: perspective(1px) translateZ(0); position: relative; -ms-transition-property: color; -moz-transition-property: color; -o-transition-property: color; -webkit-transition-property: color; transition-property: color; -ms-transition-duration: 0.5s; -moz-transition-duration: 0.5s; -o-transition-duration: 0.5s; -webkit-transition-duration: 0.5s; transition-duration: 0.5s;}
+.button:before { content: ""; position: absolute; z-index: -1; top: 0; left: 0; right: 0; bottom: 0; background: #323232; -ms-transform: scaleY(0); -moz-transform: scaleY(0); -o-transform: scaleY(0); -webkit-transform: scaleY(0); transform: scaleY(0); -ms-transform-origin: 50% 100%; -moz-transform-origin: 50% 100%; -o-transform-origin: 50% 100%; -webkit-transform-origin: 50% 100%; transform-origin: 50% 100%; -ms-transition-property: transform; -moz-transition-property: transform; -o-transition-property: transform; -webkit-transition-property: transform; transition-property: transform; -moz-transition-duration: 0.5s; -ms-transition-duration: 0.5s; -o-transition-duration: 0.5s; -moz-transition-duration: 0.5s; -ms-transition-duration: 0.5s; -o-transition-duration: 0.5s; -webkit-transition-duration: 0.5s; transition-duration: 0.5s; -ms-transition-timing-function: ease-out; -moz-transition-timing-function: ease-out; -o-transition-timing-function: ease-out; -webkit-transition-timing-function: ease-out; transition-timing-function: ease-out; }
+.button:hover, .button:focus, .button:active { color: #ffffff; }
+.button:hover:before, .button:focus:before, .button:active:before { -moz-transform: scaleY(1); -o-transform: scaleY(1); -ms-transform: scaleY(1); -webkit-transform: scaleY(1); transform: scaleY(1); -moz-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.50); -ms-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.50); -o-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.50); -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.50); transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.50); }
+
+/*button.border */
+.button.border { background: transparent; border: 1px solid #e3e3e3; color: #323232; }
+.button.border:before { background: #88c8bc; }
+.button.border:hover, .button.border:focus, .button.border:active { color: #ffffff; border-color: #88c8bc; }
+
+/*button.white*/
+.button.white { background: #ffffff; color: #88c8bc; }
+.button.white:before { background: #323232; }
+.button.white:hover, .button.border:focus, .button.border:active { color: #ffffff; border-color: #88c8bc; }
+
+/*button.black*/
+.button.black { background: #323232; color: #ffffff; }
+.button.black:before { background: #ffffff; }
+.button.black:hover, .button.border:focus, .button.border:active { color: #88c8bc; border-color: #ffffff; }
